@@ -37,3 +37,4 @@ jobs:
           secret_key: ${{ secrets.S3_SECRET_KEY }}
           space_region: ${{ env.SPACE_REGION }}
           source: frontend/build
+          out_dir: build
