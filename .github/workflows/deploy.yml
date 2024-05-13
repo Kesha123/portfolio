@@ -8,7 +8,7 @@ on:
 
 env:
   AWS_S3_BUCKET: portfolio-bucket-innokentii
-  AWS_REGION: ams3
+  SPACE_REGION: ams3
 
 jobs:
   deploy:
@@ -33,7 +33,7 @@ jobs:
         uses: BetaHuhn/do-spaces-action@v2
         env:
           AWS_S3_BUCKET: ${{ env.AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_KEY }}
-          AWS_REGION: ${{ env.AWS_REGION }}
-          SOURCE_DIR: 'frontend/build'
+          access_key: ${{ secrets.S3_ACCESS_KEY }}
+          secret_key: ${{ secrets.S3_SECRET_KEY }}
+          space_region: ${{ env.SPACE_REGION }}
+          source: frontend/build
