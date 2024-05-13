@@ -15,8 +15,6 @@ const about = {
   },
 }
 
-
-
 const skills = [
   'Python',
   'Tornado',
