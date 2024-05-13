@@ -1,0 +1,26 @@
+packages:
+    - name: portfolio
+      shared: false
+      environment:
+        GITHUB_TOKEN: "${GITHUB_TOKEN}"
+        S3_ACCESS_KEY: "${S3_ACCESS_KEY}"
+        S3_SECRET_KEY: "${S3_SECRET_KEY}"
+      functions:
+        - name: project_parser
+          binary: false
+          main: ""
+          runtime: python:3.11
+          webSecure: "${FUNCTION_TOKEN}"
+          triggers:
+          - name: scheduler
+            sourceType: scheduler
+            sourceDetails:
+              cron: "0 */12 * * *"
+          limits:
+            timeout: 90000
+        - name: projects
+          binary: false
+          main: ""
+          runtime: python:3.11
+          web: true
+          webSecure: "${FUNCTION_TOKEN}"
