@@ -9,7 +9,7 @@ on:
         type: choice
         options:
           - projects/portfolio/project_parser
-          - projects/portfolio/project_parser
+          - projects/portfolio/projects
         default: None
   push:
     branches:
