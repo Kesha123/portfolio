@@ -2,15 +2,6 @@ name: Lambda Deploy
 
 on:
   workflow_dispatch:
-    inputs:
-      lambda_function:
-        description: 'Lambda function to deploy'
-        required: true
-        type: choice
-        options:
-          - projects/portfolio/project_parser
-          - projects/portfolio/projects
-        default: None
   push:
     branches:
       - main
@@ -39,13 +30,6 @@ jobs:
       - name: Install doctl serverless plugin
         run: |
           doctl serverless install
-
-      - name: Deploy Specific Lambda
-        if: ${{ github.event.inputs.lambda_function != 'None' }}
-        run: |
-          cd lambda
-          doctl serverless connect portfolio
-          doctl serverless deploy ${{ github.event.inputs.lambda_function }}
 
       - name: Deploy All Lambdas
         if: ${{ github.event.inputs.lambda_function == 'None' }}
