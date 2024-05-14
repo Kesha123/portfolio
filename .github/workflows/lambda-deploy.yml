@@ -36,6 +36,10 @@ jobs:
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
+      - name: Install doctl serverless plugin
+        run: |
+          doctl serverlless install
+
       - name: Deploy Specific Lambda
         if: ${{ github.event.inputs.lambda_function != 'None' }}
         run: |
