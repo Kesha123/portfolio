@@ -38,7 +38,7 @@ jobs:
 
       - name: Install doctl serverless plugin
         run: |
-          doctl serverlless install
+          doctl serverless install
 
       - name: Deploy Specific Lambda
         if: ${{ github.event.inputs.lambda_function != 'None' }}
