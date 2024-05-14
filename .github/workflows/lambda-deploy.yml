@@ -44,10 +44,12 @@ jobs:
         if: ${{ github.event.inputs.lambda_function != 'None' }}
         run: |
           cd lambda
+          doctl serverless connect portfolio
           doctl serverless deploy ${{ github.event.inputs.lambda_function }}
 
       - name: Deploy All Lambdas
         if: ${{ github.event.inputs.lambda_function == 'None' }}
         run: |
           cd lambda
+          doctl serverless connect portfolio
           doctl serverless deploy projects
