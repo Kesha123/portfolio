@@ -1,0 +1,49 @@
+name: Lambda Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      lambda_function:
+        description: 'Lambda function to deploy'
+        required: true
+        type: choice
+        options:
+          - projects/portfolio/project_parser
+          - projects/portfolio/project_parser
+        default: None
+  push:
+    branches:
+      - main
+    paths:
+      - 'lambda/projects/packages/portfolio/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Configure Environment
+        run: |
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> lambda/projects/.env
+          echo "S3_ACCESS_KEY=${{ secrets.S3_ACCESS_KEY }}" >> lambda/projects/.env
+          echo "S3_SECRET_KEY=${{ secrets.S3_SECRET_KEY }}" >> lambda/projects/.env
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Deploy Specific Lambda
+        if: ${{ github.event.inputs.lambda_function != 'None' }}
+        run: |
+          cd lambda
+          doctl serverless deploy ${{ github.event.inputs.lambda_function }}
+
+      - name: Deploy All Lambdas
+        if: ${{ github.event.inputs.lambda_function == 'None' }}
+        run: |
+          cd lambda
+          doctl serverless deploy projects
