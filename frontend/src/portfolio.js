@@ -8,7 +8,7 @@ const about = {
   role: 'Cloud Engineer',
   description:
     'I am a Cloud Engineer with a strong background in software development. I have experience in building and maintaining cloud infrastructure, CI/CD pipelines, and monitoring systems. I am passionate about learning new technologies and solving complex problems.',
-  resume: 'https://portfolio-bucket-innokentii.ams3.cdn.digitaloceanspaces.com/CV.pdf',
+  resume: 'https://innokentii.eu/CV.pdf',
   social: {
     linkedin: 'https://www.linkedin.com/in/innokentii-kozlov/',
     github: 'https://github.com/Kesha123',

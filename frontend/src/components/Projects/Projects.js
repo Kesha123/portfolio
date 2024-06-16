@@ -10,12 +10,11 @@ const Projects = () => {
   useEffect(() => {
     async function fetchProjects() {
       const response = await fetch(
-        'https://faas-ams3-2a2df116.doserverless.co/api/v1/web/fn-b23b500e-c8e1-45af-b470-c4a00bfa0af8/portfolio/projects',
+        'https://ekxu5fuoi1.execute-api.eu-north-1.amazonaws.com/production/github',
         {
           method: 'GET',
           headers: {
-            'Content-Type': 'application/json',
-            'X-Require-Whisk-Auth': 'Hi7R7uDn5BtmNgN'
+            'Authorization': 'secret-token',
           }
         }
       )
