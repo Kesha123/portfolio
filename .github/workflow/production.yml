@@ -1,0 +1,30 @@
+name: Production Deploy
+
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'frontend/**'
+      - 'iac/**'
+
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-production
+  cancel-in-progress: true
+
+
+jobs:
+  call-deploy-iac:
+    name: Deploy Frontend
+    uses: ./.github/workflows/deploy-iac.yaml
+    secrets: inherit
+
+  call-deploy-frontend:
+    name: Deploy Frontend
+    needs: call-deploy-iac
+    uses: ./.github/workflows/deploy-frontend.yaml
+    secrets: inherit
+    with:
+      BUCKET_NAME: ${{ fromJson(needs.call-deploy-iac.outputs.resources).resources.bucketName }}

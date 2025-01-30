@@ -1,0 +1,11 @@
+node_modules/
+build/
+.dockerignore
+.eslintignore
+.eslintrc.json
+.gitignore
+.prettierignore
+.prettierrc.json
+Dockerfile
+LICENSE
+yarn.lock
