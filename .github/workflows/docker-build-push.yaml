@@ -7,7 +7,8 @@ on:
 
 
 env:
-  FRONTEND_IMAGE_NAME: portfolio-frontend
+  IMAGE_REPOSITORY: ghcr.io/Kesha123/portfolio
+  IMAGE_NAME: portfolio-frontend
 
 
 jobs:
@@ -15,7 +16,7 @@ jobs:
     name: Build & Push Frontend Image
     runs-on: ubuntu-latest
     outputs:
-      image: ghcr.io/Kesha123/${{ env.FRONTEND_IMAGE_NAME }}:${{ github.sha }}
+      image: ${{ IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
     defaults:
       run:
         working-directory: frontend
@@ -46,6 +47,6 @@ jobs:
       with:
         context: ./frontend
         push: true
-        tags: ghcr.io/Kesha123/${{ env.FRONTEND_IMAGE_NAME }}:${{ github.sha }}
-        cache-from: type=registry,ref=ghcr.io/Kesha123/${{ env.FRONTEND_IMAGE_NAME }}:buildcahe
-        cache-to: type=registry,ref=ghcr.io/Kesha123/${{ env.FRONTEND_IMAGE_NAME }}:buildcahe,mode=max
+        tags: ${{ IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+        cache-from: type=registry,ref=${{ IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:buildcahe
+        cache-to: type=registry,ref=${{ IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:buildcahe,mode=max
