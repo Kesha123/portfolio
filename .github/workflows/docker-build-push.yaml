@@ -16,7 +16,7 @@ jobs:
     name: Build & Push Frontend Image
     runs-on: ubuntu-latest
     outputs:
-      image: ${{ IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+      image: ${{ env.IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
     defaults:
       run:
         working-directory: frontend
@@ -47,6 +47,6 @@ jobs:
       with:
         context: ./frontend
         push: true
-        tags: ${{ IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-        cache-from: type=registry,ref=${{ IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:buildcahe
-        cache-to: type=registry,ref=${{ IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:buildcahe,mode=max
+        tags: ${{ env.IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+        cache-from: type=registry,ref=${{ env.IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:buildcahe
+        cache-to: type=registry,ref=${{ env.IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:buildcahe,mode=max
