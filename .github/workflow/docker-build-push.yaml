@@ -3,6 +3,7 @@ name: Docker Build and Push
 
 on:
   workflow_dispatch:
+  workflow_run:
 
 
 env:
@@ -13,6 +14,8 @@ jobs:
   build-push-frontend-image:
     name: Build & Push Frontend Image
     runs-on: ubuntu-latest
+    outputs:
+      image: ghcr.io/Kesha123/${{ env.FRONTEND_IMAGE_NAME }}:${{ github.sha }}
     defaults:
       run:
         working-directory: frontend

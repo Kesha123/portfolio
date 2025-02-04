@@ -19,7 +19,7 @@ const projects = [
     name: 'Personal Portfolio',
     description:
       'Personal portfolio website built with React and Material UI.',
-    stack: ['JavaScript', 'React', 'Material UI', 'HTML', 'CSS', 'Pulumi'],
+    stack: ['JavaScript', 'React', 'Material UI', 'HTML', 'CSS', 'Docker', 'Kubernetes'],
     sourceCode: 'https://github.com/Kesha123/portfolio',
     livePreview: 'https://innokentii.eu',
   },

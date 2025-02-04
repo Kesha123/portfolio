@@ -7,7 +7,6 @@ on:
       - main
     paths:
       - 'frontend/**'
-      - 'iac/**'
 
 
 concurrency:
@@ -68,23 +67,3 @@ jobs:
         with:
           name: frontend-build
           path: build/
-
-  lint-iac:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: iac
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v4
-        with:
-          node-version: "18.x"
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Lint
-        run: npm run lint

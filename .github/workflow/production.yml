@@ -3,12 +3,8 @@ name: Production Deploy
 
 on:
   push:
-    branches:
-      - master
-    paths:
-      - 'frontend/**'
-      - 'iac/**'
-
+    tags:
+      - 'v*'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-production
@@ -16,15 +12,15 @@ concurrency:
 
 
 jobs:
-  call-deploy-iac:
-    name: Deploy Frontend
-    uses: ./.github/workflows/deploy-iac.yaml
+  call-docker-build-push:
+    name: Docker Build and Push
+    uses: ./.github/workflows/docker-build-push.yaml
     secrets: inherit
 
-  call-deploy-frontend:
+  call-helm-package:
     name: Deploy Frontend
-    needs: call-deploy-iac
+    needs: call-docker-build-push
     uses: ./.github/workflows/deploy-frontend.yaml
     secrets: inherit
     with:
-      BUCKET_NAME: ${{ fromJson(needs.call-deploy-iac.outputs.resources).resources.bucketName }}
+      IMAGE_TAG: ${{ needs.call-deploy-iac.outputs.image }}
