@@ -7,7 +7,7 @@ on:
 
 
 env:
-  IMAGE_REPOSITORY: ghcr.io/Kesha123/portfolio
+  IMAGE_REPOSITORY: ghcr.io/kesha123/portfolio
   IMAGE_NAME: portfolio-frontend
 
 
