@@ -31,4 +31,5 @@ jobs:
     secrets: inherit
     with:
       PROJECT_NAME: ${{ github.repository }}
-      IMAGE_TAG:  ${{ github.ref_name }}
+      TAG:  ${{ github.ref_name }}
+      IMAGES: ${{ toJson(needs.call-docker-build-push.outputs) }}

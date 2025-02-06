@@ -25,7 +25,7 @@ jobs:
     name: Build & Push Frontend Image
     runs-on: ubuntu-latest
     outputs:
-      image: ${{ env.IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ inputs.TAG }}
+      image: ${{ env.IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
     defaults:
       run:
         working-directory: frontend
