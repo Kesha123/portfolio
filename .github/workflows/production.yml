@@ -30,6 +30,6 @@ jobs:
     uses: Kesha123/helm-packages/.github/workflows/update-helm-package.yaml@main
     secrets: inherit
     with:
-      PROJECT_NAME: ${{ github.repository }}
+      PROJECT_NAME: portfolio
       TAG:  ${{ github.ref_name }}
       IMAGES: ${{ toJson(needs.call-docker-build-push.outputs) }}
