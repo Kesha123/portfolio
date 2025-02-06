@@ -27,7 +27,7 @@ jobs:
   call-update-helm-package:
     name: Update Helm Package
     needs: call-docker-build-push
-    uses: ${{ github.repository_owner }}/${{ env.HELM_PACKAGES_REPO }}.github/workflows/update-helm-package.yaml
+    uses: Kesha123/helm-packages/.github/workflows/update-helm-package.yaml@main
     secrets: inherit
     with:
       PROJECT_NAME: ${{ github.repository }}
