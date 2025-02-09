@@ -76,7 +76,7 @@ jobs:
         context: ./frontend
         platforms: ${{ matrix.platform }}
         labels: ${{ steps.meta.outputs.labels }}
-        outputs: type=image,"name=${{ env.IMAGE_REPOSITORY }}",push-by-digest=true,name-canonical=true,push=true
+        outputs: type=image,"name=${{ env.IMAGE_REPOSITORY }}",push=true
         tags: |
           ${{ env.IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           ${{ env.IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ inputs.TAG }}
