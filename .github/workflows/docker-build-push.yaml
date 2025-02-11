@@ -147,4 +147,4 @@ jobs:
       - name: Set Output
         id: set_output
         run: |
-          echo '{"image":"${{ env.IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"}' >> $GITHUB_ENV
+          echo 'image={"image":"${{ env.IMAGE_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"}' >> $GITHUB_OUTPUT
