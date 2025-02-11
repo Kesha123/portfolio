@@ -1,0 +1,58 @@
+name: Cloud Stack Deploy
+
+
+on:
+  workflow_call:
+    outputs:
+      resources:
+        value: ${{ jobs.cloud-stack-deploy.outputs.resources }}
+  workflow_dispatch:
+
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-iac
+  cancel-in-progress: true
+
+
+jobs:
+  cloud-stack-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: iac
+    outputs:
+      resources: ${{ steps.pulumi-output.outputs.resources }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18.x"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Pulumi Up
+        uses: pulumi/actions@v6
+        with:
+          command: up
+          stack-name: dev
+          work-dir: iac
+          cloud-url: s3://innokentii-home-server
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'eu-north-1'
+
+      - name: Pulumi Output
+        id: pulumi-output
+        run: |-
+          RESOURCES=$(pulumi stack --stack dev output --json)
+          echo $RESOURCES
+          {
+            echo 'resources<<EOF'
+            echo $RESOURCES
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
