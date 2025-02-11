@@ -14,7 +14,7 @@ concurrency:
 
 
 jobs:
-  lint-fronted:
+  lint:
     runs-on: ubuntu-latest
     defaults:
       run:
