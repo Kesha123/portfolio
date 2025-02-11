@@ -5,6 +5,12 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
+    inputs:
+      TAG:
+        type: string
+        required: true
+        description: 'The associated tag for the Docker image'
 
 
 env:
@@ -32,4 +38,4 @@ jobs:
     with:
       PROJECT_NAME: portfolio
       TAG:  ${{ github.ref_name }}
-      IMAGES: ${{ toJson(needs.call-docker-build-push.outputs) }}
+      IMAGES: ${{ needs.call-docker-build-push.outputs.image }}
