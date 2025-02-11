@@ -7,7 +7,7 @@ const about = {
   name: 'Innokentii Kozlov',
   role: 'Software Engineer',
   description: 'I am a Cloud Engineer with a strong background in software development. I have experience in building and maintaining cloud infrastructure, CI/CD pipelines, and monitoring systems. I am passionate about learning new technologies and solving complex problems.',
-  resume: 'https://innokentii.eu/resume.pdf',
+  resume: 'https://innokentii-home-server.s3.eu-north-1.amazonaws.com/resume.pdf',
   social: {
     linkedin: 'https://www.linkedin.com/in/innokentii-kozlov/',
     github: 'https://github.com/Kesha123',
@@ -27,7 +27,7 @@ const projects = [
     name: 'Home Server',
     description:
       'Personal home server setup with Raspberry Pi',
-    stack: ['Kubernetes', 'K3S','Pulumi'],
+    stack: ['Kubernetes', 'K3S','Pulumi', 'Ansible'],
     sourceCode: 'https://github.com/Kesha123/home-server',
     livePreview: 'https://github.com/Kesha123/home-server',
   },
@@ -35,14 +35,14 @@ const projects = [
     name: 'K3S Cluster on AWS',
     description:
       'K3S Kubernetes cluster deployment on AWS using Pulumi.',
-    stack: ['TypeScript', 'AWS', 'Pulumi', 'K3S', 'Python', 'Bash', 'Kubernetes'],
+    stack: ['TypeScript', 'AWS', 'Pulumi', 'K3S', 'Python', 'Ansible', 'Kubernetes'],
     sourceCode: 'https://github.com/Kesha123/k3s-aws',
     livePreview: 'https://github.com/Kesha123/k3s-aws',
   },
   {
     name: 'REST API with Node.js and Express.js',
     description:
-      'Node.js + Express.js REST API, which provides CRUD operations on a table in SQLite3.',
+      'NodeJs + Express.js REST API, which provides CRUD operations on a table in SQLite3.',
     stack: ['NodeJs', 'Express.js', 'SQLite3', 'JavaScript', 'Docker', 'Kubernetes', 'Pulumi'],
     sourceCode: 'https://github.com/Kesha123/nodejs-rest-api',
     livePreview: 'https://nodejs-rest-api.innokentii.fi',
