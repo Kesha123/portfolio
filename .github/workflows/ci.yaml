@@ -8,6 +8,7 @@ on:
     paths:
       - 'frontend/**'
       - '.github/workflows/ci.yaml'
+      - '.github/workflows/frontend-build.yaml'
 
 
 concurrency:
