@@ -7,7 +7,7 @@ on:
 
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}-frontend
+  group: ${{ github.workflow }}-${{ github.ref }}-frontend-build
   cancel-in-progress: true
 
 
