@@ -15,7 +15,7 @@ new aws.route53.Record(`${configurationData.project_name}-cname-record`, {
   type: aws.route53.RecordType.CNAME,
   ttl: 30,
   records: [
-    `${configurationData.project_domain}.${configurationData.root_domain}`,
+    `kesha123.github.io`,
   ],
 });
 
