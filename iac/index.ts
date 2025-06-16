@@ -14,7 +14,6 @@ new aws.route53.Record(`${configurationData.project_name}-cname-record`, {
   name: configurationData.project_domain,
   type: aws.route53.RecordType.CNAME,
   ttl: 30,
-  setIdentifier: `${configurationData.project_name}`,
   records: [
     `${configurationData.project_domain}.${configurationData.root_domain}`,
   ],
