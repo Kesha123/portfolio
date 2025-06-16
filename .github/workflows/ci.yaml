@@ -11,6 +11,7 @@ on:
       - '.github/workflows/lint.yaml'
       - '.github/workflows/npm-build.yaml'
       - '.github/workflows/docker-build.yaml'
+      - '.github/workflows/deploy.yaml'
 
 
 concurrency:
@@ -36,3 +37,9 @@ jobs:
     secrets: inherit
     with:
       TAG: latest
+
+  call-deploy:
+    name: Deploy GitHub Pages
+    needs: call-npm-build
+    uses: ./.github/workflows/deploy.yaml
+    secrets: inherit
