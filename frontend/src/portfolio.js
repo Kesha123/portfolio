@@ -6,7 +6,7 @@ const header = {
 const about = {
   name: 'Innokentii Kozlov',
   role: 'Software Engineer',
-  description: 'I am a Cloud Engineer with a strong background in software development. I have experience in building and maintaining cloud infrastructure, CI/CD pipelines, and monitoring systems. I am passionate about learning new technologies and solving complex problems.',
+  description: 'DevOps software engineer with over 3 years of experience in cloud infrastructure, CI/CD, and automation. Worked on a variety of projects using diverse technologies, from backend systems to infrastructure as code. Strong focus on reliability, scalability, and improving development workflows.',
   resume: 'https://drive.google.com/file/d/1pz9vKhOtHr-L97yGOz5Xby2LLBoqla_6/view?usp=sharing',
   social: {
     linkedin: 'https://www.linkedin.com/in/innokentii-kozlov/',
@@ -19,9 +19,9 @@ const projects = [
     name: 'Personal Portfolio',
     description:
       'Personal portfolio website built with React and Material UI.',
-    stack: ['JavaScript', 'React', 'Material UI', 'HTML', 'CSS', 'Docker', 'Kubernetes'],
+    stack: ['JavaScript', 'React', 'Material UI', 'HTML', 'CSS', 'Docker', 'AWS', 'Pulumi', 'GitHub Actions'],
     sourceCode: 'https://github.com/Kesha123/portfolio',
-    livePreview: 'https://innokentii-kozlov.com',
+    livePreview: 'https://portfolio.innokentii-kozlov.com',
   },
 ]
 
