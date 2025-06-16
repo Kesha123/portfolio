@@ -16,6 +16,6 @@
         "@pulumi/pulumi": "^3.113.0"
     },
     "scripts": {
-        "lint": "npx eslint index.ts types/ --fix"
+        "lint": "npx eslint --fix"
     }
 }

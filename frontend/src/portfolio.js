@@ -1,5 +1,5 @@
 const header = {
-  homepage: 'https://innokentii.eu',
+  homepage: 'https://innokentii-kozlov.com',
   title: 'Software Engineer',
 }
 
@@ -20,40 +20,8 @@ const projects = [
     description:
       'Personal portfolio website built with React and Material UI.',
     stack: ['JavaScript', 'React', 'Material UI', 'HTML', 'CSS', 'Docker', 'Kubernetes'],
-    sourceCode: 'https://github.com/Kesha123/portfolio',
-    livePreview: 'https://innokentii.eu',
-  },
-  {
-    name: 'Home Server',
-    description:
-      'Personal home server setup with Raspberry Pi',
-    stack: ['Kubernetes', 'K3S','Pulumi', 'Ansible'],
-    sourceCode: 'https://github.com/Kesha123/home-server',
-    livePreview: 'https://github.com/Kesha123/home-server',
-  },
-  {
-    name: 'K3S Cluster on AWS',
-    description:
-      'K3S Kubernetes cluster deployment on AWS using Pulumi.',
-    stack: ['TypeScript', 'AWS', 'Pulumi', 'K3S', 'Python', 'Ansible', 'Kubernetes'],
-    sourceCode: 'https://github.com/Kesha123/k3s-aws',
-    livePreview: 'https://github.com/Kesha123/k3s-aws',
-  },
-  {
-    name: 'REST API with Node.js and Express.js',
-    description:
-      'NodeJs + Express.js REST API, which provides CRUD operations on a table in SQLite3.',
-    stack: ['NodeJs', 'Express.js', 'SQLite3', 'JavaScript', 'Docker', 'Kubernetes', 'Pulumi'],
-    sourceCode: 'https://github.com/Kesha123/nodejs-rest-api',
-    livePreview: 'https://nodejs-rest-api.innokentii.fi',
-  },
-  {
-    name: 'Wolt delivery cost calculator API',
-    description:
-      'This application is needed when a customer is ready with their shopping cart and they\' like to see how much the delivery will cost. The delivery price depends on the cart value, the number of items in the cart, the time of the order, and the delivery distance.',
-    stack: ['Python', 'Pytest', 'Docker', 'Kubernetes', 'Pulumi'],
-    sourceCode: 'https://github.com/Kesha123/wolt-internship-backend',
-    livePreview: 'https://wolt-delivery-cost-calculator.innokentii.fi',
+    sourceCode: 'https://drive.google.com/file/d/1pz9vKhOtHr-L97yGOz5Xby2LLBoqla_6/view?usp=sharing',
+    livePreview: 'https://innokentii-kozlov.com',
   },
 ]
 

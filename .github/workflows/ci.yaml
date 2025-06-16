@@ -8,7 +8,9 @@ on:
     paths:
       - 'frontend/**'
       - '.github/workflows/ci.yaml'
-      - '.github/workflows/frontend-build.yaml'
+      - '.github/workflows/lint.yaml'
+      - '.github/workflows/npm-build.yaml'
+      - '.github/workflows/docker-build.yaml'
 
 
 concurrency:
@@ -16,48 +18,21 @@ concurrency:
 
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: frontend
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18.x'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Lint
-        run: npm run lint
-
-  call-frontend-build:
-    name: Frontend Build
-    needs: lint
-    uses: ./.github/workflows/frontend-build.yaml
+  call-lint:
+    name: Lint
+    uses: ./.github/workflows/lint.yaml
     secrets: inherit
 
-  lint-iac:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: iac
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+  call-npm-build:
+    name: Frontend Build
+    needs: call-lint
+    uses: ./.github/workflows/npm-build.yaml
+    secrets: inherit
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18.x'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Lint
-        run: npm run lint
+  call-docker-build:
+    name: Docker Build
+    needs: call-lint
+    uses: ./.github/workflows/docker-build.yaml
+    secrets: inherit
+    with:
+      TAG: latest
