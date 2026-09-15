@@ -80,7 +80,7 @@ const skills = [
 'CLI Tooling',
 'Robot Framework',
 'Automated E2E Testing',
-'Containerized Test Environments
+'Containerized Test Environment'
 ]
 
 const contact = {
