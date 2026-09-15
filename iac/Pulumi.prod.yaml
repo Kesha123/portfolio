@@ -1,6 +1,0 @@
-config:
-  aws:region: eu-north-1
-  portfolio:data:
-    project_name: portfolio
-    project_domain: portfolio
-    root_domain: innokentii-kozlov.com
