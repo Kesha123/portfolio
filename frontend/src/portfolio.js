@@ -1,13 +1,14 @@
 const header = {
-  homepage: 'https://innokentii-kozlov.com',
+  homepage: 'https://portfolio.innokentii-kozlov.com',
   title: 'Software Engineer',
 }
 
 const about = {
   name: 'Innokentii Kozlov',
   role: 'Software Engineer',
-  description: 'DevOps software engineer with over 3 years of experience in cloud infrastructure, CI/CD, and automation. Worked on a variety of projects using diverse technologies, from backend systems to infrastructure as code. Strong focus on reliability, scalability, and improving development workflows.',
-  resume: 'https://drive.google.com/file/d/1pz9vKhOtHr-L97yGOz5Xby2LLBoqla_6/view?usp=sharing',
+  description:
+    'Software Engineer specializing in Cloud Infrastructure, CNF, full-stack development, DevSecOps. Proven ability to drive complex platform migrations, develop CI/CD pipelines, and implement critical features.',
+  resume: 'https://drive.google.com/file/d/1scKOw8H_w4DYevwRooR0uPcIjyegqVnx/view?usp=sharing',
   social: {
     linkedin: 'https://www.linkedin.com/in/innokentii-kozlov/',
     github: 'https://github.com/Kesha123',
@@ -16,40 +17,69 @@ const about = {
 
 const projects = [
   {
-    name: 'Personal Portfolio',
+    name: 'Portfolio',
     description:
-      'Personal portfolio website built with React and Material UI.',
-    stack: ['JavaScript', 'React', 'Material UI', 'HTML', 'CSS', 'Docker', 'AWS', 'Pulumi', 'GitHub Actions'],
+      'Portfolio website built with React and Material UI.',
     sourceCode: 'https://github.com/Kesha123/portfolio',
     livePreview: 'https://portfolio.innokentii-kozlov.com',
   },
+  {
+    name: 'Home Lab',
+    description:
+      'A personal home lab.',
+    sourceCode: 'https://github.com/Kesha123/home-lab'
+  },
+  {
+    name: 'Caddy Route53',
+    description:
+      'An OCI container image of Caddy with the Route53 DNS plugin pre-built, for obtaining TLS certificates via DNS-01 challenge against AWS Route 53.',
+    sourceCode: 'https://github.com/Kesha123/caddy-route53'
+  },
+  {
+    name: 'Qlyft',
+    description:
+      'The declarative CLI for shipping and managing Podman Quadlets via OCI. GitOps engine for systemd units and Quadlet bundles.',
+    sourceCode: 'https://github.com/Kesha123/qlyft'
+  }
 ]
 
 const skills = [
-'Python',
-'NodeJS',
-'JavaScript',
-'TypeScript',
-'Git',
-'Github',
-'Github Actions',
-'CI/CD',
-'Docker',
+'Platform Engineer',
+'DevOps Engineer',
+'Cloud Infrastructure Engineer',
+'Site Reliability Engineer (SRE)',
+'Systems & Cloud-Native Software Engineer',
 'Kubernetes',
-'Testing',
-'Monitoring',
-'Linux',
+'Red Hat OpenShift',
+'Docker',
+'Podman',
+'Quadlets',
+'OCI Containers',
+'CNF',
+'IaC',
+'Pulumi',
+'Terraform',
+'Amazon Web Services (AWS)',
 'DigitalOcean',
-'AWS',
-'Cloud Technologies',
+'Multi-Cloud Infrastructure',
+'Virtualization',
+'Red Hat Virtualization',
 'Nginx',
+'Git',
+'GitOps',
+'CI/CD',
+'GitHub Actions',
+'Linux',
+'Networking',
+'Python',
+'Bash',
+'Shell',
 'SQL',
 'PostgreSQL',
-'Websockets',
-'API',
-'Rest API',
-'IAC',
-'Pulumi',
+'CLI Tooling',
+'Robot Framework',
+'Automated E2E Testing',
+'Containerized Test Environment'
 ]
 
 const contact = {
