@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useCallback, useEffect, useMemo, useState } from 'react'
 import PropTypes from 'prop-types'
 
 const ThemeContext = createContext()
@@ -14,14 +14,21 @@ const ThemeProvider = ({ children }) => {
     });
   }, [])
 
-  const toggleTheme = () => {
-    const name = themeName === 'dark' ? 'light' : 'dark'
-    localStorage.setItem('themeName', name)
-    setThemeName(name)
-  }
+  const toggleTheme = useCallback(() => {
+    setThemeName((name) => {
+      const next = name === 'dark' ? 'light' : 'dark'
+      localStorage.setItem('themeName', next)
+      return next
+    })
+  }, [])
+
+  const value = useMemo(
+    () => [{ themeName, toggleTheme }],
+    [themeName, toggleTheme]
+  )
 
   return (
-    <ThemeContext.Provider value={[{ themeName, toggleTheme }]}>
+    <ThemeContext.Provider value={value}>
       {children}
     </ThemeContext.Provider>
   )
