@@ -7,8 +7,7 @@ const about = {
   name: 'Innokentii Kozlov',
   role: 'Software Engineer',
   description:
-    'Software Engineer specializing in Cloud Infrastructure, CNF, full-stack development, DevSecOps. \
-      Proven ability to drive complex platform migrations, develop CI/CD pipelines, and implement critical features.',
+    'Software Engineer specializing in Cloud Infrastructure, CNF, full-stack development, DevSecOps. Proven ability to drive complex platform migrations, develop CI/CD pipelines, and implement critical features.',
   resume: 'https://drive.google.com/file/d/1scKOw8H_w4DYevwRooR0uPcIjyegqVnx/view?usp=sharing',
   social: {
     linkedin: 'https://www.linkedin.com/in/innokentii-kozlov/',
